@@ -29,7 +29,9 @@
 
               </div>
               <p class="card-bio">
-                
+                {% if followed_user.bio%}
+                {{followed_user.bio}}
+                {% endif %}
               </p>
             </div>
           </div>
