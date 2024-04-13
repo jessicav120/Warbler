@@ -40,6 +40,7 @@
 
     <div class="col-lg-6 col-md-8 col-sm-12">
       <ul class="list-group" id="messages">
+
         {% for msg in messages %}
           <li class="list-group-item">
             <a href="/messages/{{ msg.id  }}" class="message-link"/>
@@ -51,6 +52,8 @@
               <span class="text-muted">{{ msg.timestamp.strftime('%d %B %Y') }}</span>
               <p>{{ msg.text }}</p>
             </div>
+
+            {% if g.user.id != msg.user.id %}
             <form method="POST" action="/users/add_like/{{ msg.id }}" id="messages-form">
               <button class="
                 btn 
@@ -60,8 +63,11 @@
                 <i class="fa fa-thumbs-up"></i> 
               </button>
             </form>
+            {% endif %}
+
           </li>
         {% endfor %}
+
       </ul>
     </div>
 
