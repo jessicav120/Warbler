@@ -31,7 +31,7 @@ db.create_all()
 
 
 class UserModelTestCase(TestCase):
-    """Test views for messages."""
+    """User model tests"""
 
     def setUp(self):
         """Create test client, add sample data."""
@@ -196,3 +196,4 @@ class UserModelTestCase(TestCase):
         self.assertFalse(bad_usr)
         #invalid password
         self.assertFalse(bad_pass)
+        
